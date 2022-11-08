@@ -1,0 +1,13 @@
+D:\work\Univ\WeddingTestingLab\WeddingTestingLab\WeddingTestingLab\obj\Debug\netcoreapp3.1\WeddingTestingLab.csprojAssemblyReference.cache
+D:\work\Univ\WeddingTestingLab\WeddingTestingLab\WeddingTestingLab\obj\Debug\netcoreapp3.1\WeddingTestingLab.AssemblyInfoInputs.cache
+D:\work\Univ\WeddingTestingLab\WeddingTestingLab\WeddingTestingLab\obj\Debug\netcoreapp3.1\WeddingTestingLab.AssemblyInfo.cs
+D:\work\Univ\WeddingTestingLab\WeddingTestingLab\WeddingTestingLab\obj\Debug\netcoreapp3.1\WeddingTestingLab.csproj.CoreCompileInputs.cache
+D:\work\Univ\WeddingTestingLab\WeddingTestingLab\WeddingTestingLab\bin\Debug\netcoreapp3.1\WeddingTestingLab.exe
+D:\work\Univ\WeddingTestingLab\WeddingTestingLab\WeddingTestingLab\bin\Debug\netcoreapp3.1\WeddingTestingLab.deps.json
+D:\work\Univ\WeddingTestingLab\WeddingTestingLab\WeddingTestingLab\bin\Debug\netcoreapp3.1\WeddingTestingLab.runtimeconfig.json
+D:\work\Univ\WeddingTestingLab\WeddingTestingLab\WeddingTestingLab\bin\Debug\netcoreapp3.1\WeddingTestingLab.runtimeconfig.dev.json
+D:\work\Univ\WeddingTestingLab\WeddingTestingLab\WeddingTestingLab\bin\Debug\netcoreapp3.1\WeddingTestingLab.dll
+D:\work\Univ\WeddingTestingLab\WeddingTestingLab\WeddingTestingLab\bin\Debug\netcoreapp3.1\WeddingTestingLab.pdb
+D:\work\Univ\WeddingTestingLab\WeddingTestingLab\WeddingTestingLab\obj\Debug\netcoreapp3.1\WeddingTestingLab.dll
+D:\work\Univ\WeddingTestingLab\WeddingTestingLab\WeddingTestingLab\obj\Debug\netcoreapp3.1\WeddingTestingLab.pdb
+D:\work\Univ\WeddingTestingLab\WeddingTestingLab\WeddingTestingLab\obj\Debug\netcoreapp3.1\WeddingTestingLab.genruntimeconfig.cache
