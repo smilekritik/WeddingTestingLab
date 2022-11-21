@@ -8,25 +8,12 @@ namespace WeddingTests
     public class OrderTest
     {
 
-
         [TestMethod]
-        public void CheckChengesClothes()
+        public void CheckAddCars()
         {
             order Some = new order();
-            bool actual = Some.AddCloth("test", 322);
+            bool actual = Some.AddCar("test", 20);
             bool expected = true;
-
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void CheckSummary()
-        {
-            order Some = new order();
-            Some.AddCloth("test", 322);
-            Some.AddCar("test2", 10);
-            double expected = 322 + 10;
-            double actual = Some.Summary();
 
             Assert.AreEqual(expected, actual);
         }
