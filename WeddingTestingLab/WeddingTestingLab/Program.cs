@@ -14,12 +14,8 @@ namespace WeddingTestingLab
 
         }
 
-        List<cars> car = new List<cars>();
-        public List<cars> Cars
-        {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
-        }
+        public List<cars> car { get; set; } = new List<cars>();
+
         public bool AddCar(string Name, double Price)
         {
             if(string.IsNullOrEmpty(Name) || Price <= 0){
@@ -28,6 +24,11 @@ namespace WeddingTestingLab
             cars temp = new cars(Name, Price);
             car.Add(temp);
             return true;
+        }
+
+        public bool RemoveCar(string Name, double Price)
+        {
+            throw new NotImplementedException();
         }
     }
 }
