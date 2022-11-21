@@ -28,7 +28,8 @@ namespace WeddingTestingLab
 
         public bool RemoveCar(string Name, double Price)
         {
-            throw new NotImplementedException();
+            var test = car.Single(r => r.name == Name);
+            return car.Remove(test);
         }
     }
 }
