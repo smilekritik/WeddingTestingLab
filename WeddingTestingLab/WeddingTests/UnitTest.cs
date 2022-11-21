@@ -121,5 +121,17 @@ namespace WeddingTests
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void CheckSummaryOrder()
+        {
+            order Some = new order();
+            Some.AddCloth("test", 322);
+            Some.AddCar("test2", 10);
+            double expected = 322 + 10;
+            double actual = Some.Summary();
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

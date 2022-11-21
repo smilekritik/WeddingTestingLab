@@ -67,5 +67,9 @@ namespace WeddingTestingLab
             return ceremonie.Remove(test);
         }
 
+        public double Summary()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
