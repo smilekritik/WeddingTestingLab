@@ -12,7 +12,7 @@ namespace WeddingTests
         public void CheckAddCars()
         {
             order Some = new order();
-            bool actual = Some.AddCar("test", -2);
+            bool actual = Some.AddCar("test", 20);
             bool expected = true;
 
             Assert.AreEqual(expected, actual);
