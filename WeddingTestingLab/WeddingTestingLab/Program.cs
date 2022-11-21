@@ -22,6 +22,9 @@ namespace WeddingTestingLab
         }
         public bool AddCar(string Name, double Price)
         {
+            if(string.IsNullOrEmpty(Name) || Price <= 0){
+                return false;
+            }
             return true;
         }
     }
