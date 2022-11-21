@@ -14,7 +14,7 @@ namespace WeddingTestingLab
 
         }
 
-        List<cars> car = new List<cars>();
+        public List<cars> car = new List<cars>();
         public List<cars> List
         {
             get { throw new NotImplementedException(); }
@@ -25,6 +25,8 @@ namespace WeddingTestingLab
             if(string.IsNullOrEmpty(Name) || Price <= 0){
                 return false;
             }
+            cars temp = new cars(Name, Price);
+            car.Add(temp);
             return true;
         }
     }
