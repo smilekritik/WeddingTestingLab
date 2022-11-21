@@ -133,5 +133,23 @@ namespace WeddingTests
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void CheckSummaryOrderDescending()
+        {
+            order Some = new order();
+            Some.AddCloth("test", 322);
+            Some.AddCar("test2", 10);
+            var actual = Some.DescendingPrice();
+
+            order Some2 = new order();
+            Some2.AddCar("test2", 10);
+            Some2.AddCloth("test", 322);
+            var expected = Some2;
+
+            var expectedjson = JsonConvert.SerializeObject(expected);
+            var actualjson = JsonConvert.SerializeObject(actual);
+            Assert.AreEqual(expectedjson, actualjson);
+        }
     }
 }

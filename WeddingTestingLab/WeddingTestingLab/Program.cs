@@ -69,6 +69,16 @@ namespace WeddingTestingLab
 
         public double Summary()
         {
+            double sum = 0;
+
+            sum += ceremonie.Sum(item => item.price);
+            sum += cloth.Sum(item => item.price);
+            sum += car.Sum(item => item.price);
+            return sum;
+        }
+
+        public order DescendingPrice()
+        {
             throw new NotImplementedException();
         }
     }
