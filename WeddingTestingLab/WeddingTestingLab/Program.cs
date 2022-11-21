@@ -14,8 +14,8 @@ namespace WeddingTestingLab
 
         }
 
-        public List<cars> car = new List<cars>();
-        public List<cars> List
+        List<cars> car = new List<cars>();
+        public List<cars> Cars
         {
             get { throw new NotImplementedException(); }
             set { throw new NotImplementedException(); }
