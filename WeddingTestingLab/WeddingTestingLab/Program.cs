@@ -22,7 +22,7 @@ namespace WeddingTestingLab
         }
         public bool AddCar(string Name, double Price)
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }
