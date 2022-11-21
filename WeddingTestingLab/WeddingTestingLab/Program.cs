@@ -14,6 +14,15 @@ namespace WeddingTestingLab
 
         }
 
+        List<cars> car = new List<cars>();
+        public List<cars> List
+        {
+            get { throw new NotImplementedException(); }
+            set { throw new NotImplementedException(); }
+        }
+        public bool AddCar(string Name, double Price)
+        {
+            throw new NotImplementedException();
+        }
     }
-
 }
