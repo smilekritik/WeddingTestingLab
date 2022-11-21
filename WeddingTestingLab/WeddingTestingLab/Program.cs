@@ -79,7 +79,13 @@ namespace WeddingTestingLab
 
         public order DescendingPrice()
         {
-            throw new NotImplementedException();
+            double sum = 0;
+            List<Services> orders = new List<Services>();
+            orders.AddRange(cloth);
+            orders.AddRange(car);
+            orders.AddRange(ceremonie);
+            orders.OrderByDescending(item => item.price);
+            return this;
         }
     }
 }
