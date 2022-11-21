@@ -56,7 +56,7 @@ namespace WeddingTests
 
             order Some = new order();
             Some.AddCloth("some", 1);
-            var expected = Some.car;
+            var expected = Some.cloth;
 
             var expectedjson = JsonConvert.SerializeObject(expected);
             var actualjson = JsonConvert.SerializeObject(actual);
@@ -94,7 +94,7 @@ namespace WeddingTests
 
             order Some = new order();
             Some.AddCeremonie("some", 1);
-            var expected = Some.car;
+            var expected = Some.ceremonie;
 
             var expectedjson = JsonConvert.SerializeObject(expected);
             var actualjson = JsonConvert.SerializeObject(actual);

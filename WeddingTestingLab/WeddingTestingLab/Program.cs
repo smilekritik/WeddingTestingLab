@@ -36,21 +36,35 @@ namespace WeddingTestingLab
 
         public bool AddCloth(string Name, double Price)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(Name) || Price <= 0)
+            {
+                return false;
+            }
+            clothes temp = new clothes(Name, Price);
+            cloth.Add(temp);
+            return true;
         }
 
         public bool RemoveCloth(string Name, double Price)
         {
-            throw new NotImplementedException();
+            var test = cloth.Single(r => r.name == Name);
+            return cloth.Remove(test);
         }
         public bool AddCeremonie(string Place, double Price)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(Place) || Price <= 0)
+            {
+                return false;
+            }
+            ceremonies temp = new ceremonies(Place, Price);
+            ceremonie.Add(temp);
+            return true;
         }
 
         public bool RemoveCeremonie(string Place, double Price)
         {
-            throw new NotImplementedException();
+            var test = ceremonie.Single(r => r.place == Place);
+            return ceremonie.Remove(test);
         }
 
     }
