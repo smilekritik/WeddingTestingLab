@@ -24,8 +24,10 @@ namespace WeddingServices
 
         public List<Car> GetAvailableCars()
         {
-            var carsInOrder = ServicesInOrder.Where(e => e is Car).Select(e => new Car((e as Car).Name, e.Price)).ToList();
-            var availableCars = AvailableServices.Where(e => e is Car).Select(e => new Car((e as Car).Name, e.Price)).ToList();
+            var carsInOrder = ServicesInOrder.Where(e => e is Car)
+                .Select(e => new Car((e as Car).Name, e.Price)).ToList();
+            var availableCars = AvailableServices.Where(e => e is Car)
+                .Select(e => new Car((e as Car).Name, e.Price)).ToList();
 
             foreach (var car in carsInOrder)
             {
@@ -74,8 +76,10 @@ namespace WeddingServices
 
         public List<Ceremony> GetAvailableCeremonies()
         {
-            var ceremoniesInOrder = ServicesInOrder.Where(e => e is Ceremony).Select(e => new Ceremony((e as Ceremony).Place, e.Price)).ToList();
-            var availableCeremonies = AvailableServices.Where(e => e is Ceremony).Select(e => new Ceremony((e as Ceremony).Place, e.Price)).ToList();
+            var ceremoniesInOrder = ServicesInOrder.Where(e => e is Ceremony)
+                .Select(e => new Ceremony((e as Ceremony).Place, e.Price)).ToList();
+            var availableCeremonies = AvailableServices.Where(e => e is Ceremony)
+                .Select(e => new Ceremony((e as Ceremony).Place, e.Price)).ToList();
 
             foreach (var ceremony in ceremoniesInOrder)
             {
@@ -113,7 +117,8 @@ namespace WeddingServices
                (e as Ceremony).Place == place && (e as Ceremony).Price == price).FirstOrDefault();
 
             if (AvailableServices.Where(e => e is Ceremony &&
-               (e as Ceremony).Place == ceremonyForRemove.Place && (e as Ceremony).Price == ceremonyForRemove.Price).FirstOrDefault() == null
+               (e as Ceremony).Place == ceremonyForRemove.Place && (e as Ceremony).Price == ceremonyForRemove.Price)
+                .FirstOrDefault() == null
                || ceremonyForRemove == null)
             {
                 return false;
@@ -124,8 +129,10 @@ namespace WeddingServices
 
         public List<Cloth> GetAvailableClothes()
         {
-            var clothesInOrder = ServicesInOrder.Where(e => e is Cloth).Select(e => new Cloth((e as Cloth).Name, e.Price)).ToList();
-            var availableClothes = AvailableServices.Where(e => e is Cloth).Select(e => new Cloth((e as Cloth).Name, e.Price)).ToList();
+            var clothesInOrder = ServicesInOrder.Where(e => e is Cloth)
+                .Select(e => new Cloth((e as Cloth).Name, e.Price)).ToList();
+            var availableClothes = AvailableServices.Where(e => e is Cloth)
+                .Select(e => new Cloth((e as Cloth).Name, e.Price)).ToList();
 
             foreach (var cloth in clothesInOrder)
             {
@@ -172,25 +179,14 @@ namespace WeddingServices
             return ServicesInOrder.Remove(clothForRemove);
         }
 
-        //public double Summary()
-        //{
-        //    double sum = 0;
+        public double Summary()
+        {
+            return ServicesInOrder.Sum(e => e.Price);
+        }
 
-        //    sum += ceremonie.Sum(item => item.price);
-        //    sum += cloth.Sum(item => item.price);
-        //    sum += car.Sum(item => item.price);
-        //    return sum;
-        //}
-
-        //public order DescendingPrice()
-        //{
-        //    double sum = 0;
-        //    List<Services> orders = new List<Services>();
-        //    orders.AddRange(cloth);
-        //    orders.AddRange(car);
-        //    orders.AddRange(ceremonie);
-        //    orders.OrderByDescending(item => item.price);
-        //    return this;
-        //}
+        public List<Services> DescendingPrice()
+        {
+            return ServicesInOrder.OrderByDescending(e => e.Price).ToList();
+        }
     }
 }

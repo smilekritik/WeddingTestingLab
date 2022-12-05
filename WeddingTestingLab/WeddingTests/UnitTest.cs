@@ -129,34 +129,36 @@ namespace WeddingTests
             Assert.IsTrue(actual);
         }
 
-        //[TestMethod]
-        //public void CheckSummaryOrder()
-        //{
-        //    order Some = new order();
-        //    Some.AddCloth("test", 322);
-        //    Some.AddCar("test2", 10);
-        //    double expected = 322 + 10;
-        //    double actual = Some.Summary();
+        [TestMethod]
+        public void CheckSummaryOrder()
+        {
+            Orders SomeOrder = new Orders();
 
-        //    Assert.AreEqual(expected, actual);
-        //}
+            SomeOrder.AddCloth("Some cloth1", 100);
+            SomeOrder.AddCeremony("Some ceremony1", 100);
 
-        //[TestMethod]
-        //public void CheckSummaryOrderDescending()
-        //{
-        //    order Some = new order();
-        //    Some.AddCloth("test", 322);
-        //    Some.AddCar("test2", 10);
-        //    var actual = Some.DescendingPrice();
+            double expected = 200;
+            double actual = SomeOrder.Summary();
 
-        //    order Some2 = new order();
-        //    Some2.AddCar("test2", 10);
-        //    Some2.AddCloth("test", 322);
-        //    var expected = Some2;
+            Assert.AreEqual(expected, actual);
+        }
 
-        //    var expectedjson = JsonConvert.SerializeObject(expected);
-        //    var actualjson = JsonConvert.SerializeObject(actual);
-        //    Assert.AreEqual(expectedjson, actualjson);
-        //}
+        [TestMethod]
+        public void CheckSummaryOrderDescending()
+        {
+            Orders SomeOrder1 = new Orders();
+            SomeOrder1.AddCeremony("Some ceremony1", 100);
+            SomeOrder1.AddCloth("Some cloth2", 200);
+            var actual = SomeOrder1.DescendingPrice();
+
+            Orders SomeOrder2 = new Orders();
+            SomeOrder2.AddCloth("Some cloth2", 200);
+            SomeOrder2.AddCeremony("Some ceremony1", 100);
+            var expected = SomeOrder2.ServicesInOrder;
+
+            var expectedjson = JsonConvert.SerializeObject(expected);
+            var actualjson = JsonConvert.SerializeObject(actual);
+            Assert.AreEqual(expectedjson, actualjson);
+        }
     }
 }
