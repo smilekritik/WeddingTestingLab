@@ -89,6 +89,46 @@ namespace WeddingTests
             Assert.IsTrue(actual);
         }
 
+        [TestMethod]
+        public void GetClothes_SomeCloth1WithPrice100_And_SomeCloth2WithPrice200_Return_ListWith2Members()
+        {
+            Orders SomeOrder = new Orders();
+            SomeOrder.AddCloth("Some cloth1", 100);
+            SomeOrder.AddCloth("Some cloth2", 200);
+
+            var actual = SomeOrder.GetAvailableClothes();
+            var expected = new List<Cloth> {
+            new Cloth("Some cloth3", 300),
+            new Cloth("Some cloth4", 400)
+            };
+
+            var expectedjson = JsonConvert.SerializeObject(expected);
+            var actualjson = JsonConvert.SerializeObject(actual);
+
+            Assert.AreEqual(expectedjson, actualjson);
+        }
+
+        [TestMethod]
+        public void AddCloth_SomeCloth1WithPrice100_ReturnTrue()
+        {
+            Orders SomeOrder = new Orders();
+
+            bool actual = SomeOrder.AddCloth("Some cloth1", 100);
+
+            Assert.IsTrue(actual);
+        }
+
+        [TestMethod]
+        public void RemoveCloth_SomeCloth1WithPrice100_ReturnTrue()
+        {
+            Orders SomeOrder = new Orders();
+
+            SomeOrder.AddCloth("Some cloth1", 100);
+            bool actual = SomeOrder.RemoveCloth("Some cloth1", 100);
+
+            Assert.IsTrue(actual);
+        }
+
         //[TestMethod]
         //public void CheckSummaryOrder()
         //{
