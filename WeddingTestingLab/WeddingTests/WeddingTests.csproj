@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WeddingTestingLab\WeddingTestingLab.csproj" />
+    <ProjectReference Include="..\WeddingServices\WeddingServices.csproj" />
   </ItemGroup>
 
 </Project>

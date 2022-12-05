@@ -1635,14 +1635,13 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
-      "WeddingTestingLab/1.0.0": {
+      "WeddingServices/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
         "compile": {
-          "bin/placeholder/WeddingTestingLab.dll": {}
+          "bin/placeholder/WeddingServices.dll": {}
         },
         "runtime": {
-          "bin/placeholder/WeddingTestingLab.dll": {}
+          "bin/placeholder/WeddingServices.dll": {}
         }
       }
     }
@@ -5716,10 +5715,10 @@
         "system.xml.xdocument.nuspec"
       ]
     },
-    "WeddingTestingLab/1.0.0": {
+    "WeddingServices/1.0.0": {
       "type": "project",
-      "path": "../WeddingTestingLab/WeddingTestingLab.csproj",
-      "msbuildProject": "../WeddingTestingLab/WeddingTestingLab.csproj"
+      "path": "../WeddingServices/WeddingServices.csproj",
+      "msbuildProject": "../WeddingServices/WeddingServices.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5727,7 +5726,7 @@
       "MSTest.TestAdapter >= 2.1.0",
       "MSTest.TestFramework >= 2.1.0",
       "Microsoft.NET.Test.Sdk >= 16.5.0",
-      "WeddingTestingLab >= 1.0.0",
+      "WeddingServices >= 1.0.0",
       "coverlet.collector >= 1.2.0"
     ]
   },
@@ -5762,8 +5761,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\work\\Univ\\WeddingTestingLab\\WeddingTestingLab\\WeddingTestingLab\\WeddingTestingLab.csproj": {
-              "projectPath": "D:\\work\\Univ\\WeddingTestingLab\\WeddingTestingLab\\WeddingTestingLab\\WeddingTestingLab.csproj"
+            "D:\\work\\Univ\\WeddingTestingLab\\WeddingTestingLab\\WeddingServices\\WeddingServices.csproj": {
+              "projectPath": "D:\\work\\Univ\\WeddingTestingLab\\WeddingTestingLab\\WeddingServices\\WeddingServices.csproj"
             }
           }
         }
