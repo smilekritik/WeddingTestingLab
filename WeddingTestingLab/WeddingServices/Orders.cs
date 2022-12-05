@@ -72,38 +72,57 @@ namespace WeddingServices
             return ServicesInOrder.Remove(carForRemove);
         }
 
-        //public bool AddCloth(string Name, double Price)
-        //{
-        //    if (string.IsNullOrEmpty(Name) || Price <= 0)
-        //    {
-        //        return false;
-        //    }
-        //    Cloth temp = new Cloth(Name, Price);
-        //    cloth.Add(temp);
-        //    return true;
-        //}
+        public List<Ceremony> GetAvailableCeremonies()
+        {
+            var ceremoniesInOrder = ServicesInOrder.Where(e => e is Ceremony).Select(e => new Ceremony((e as Ceremony).Place, e.Price)).ToList();
+            var availableCeremonies = AvailableServices.Where(e => e is Ceremony).Select(e => new Ceremony((e as Ceremony).Place, e.Price)).ToList();
 
-        //public bool RemoveCloth(string Name, double Price)
-        //{
-        //    var test = cloth.Single(r => r.name == Name);
-        //    return cloth.Remove(test);
-        //}
-        //public bool AddCeremonie(string Place, double Price)
-        //{
-        //    if (string.IsNullOrEmpty(Place) || Price <= 0)
-        //    {
-        //        return false;
-        //    }
-        //    ceremonies temp = new ceremonies(Place, Price);
-        //    ceremonie.Add(temp);
-        //    return true;
-        //}
+            foreach (var car in ceremoniesInOrder)
+            {
+                availableCeremonies.Remove(availableCeremonies.Where(e => e.Place == car.Place).FirstOrDefault());
+            }
 
-        //public bool RemoveCeremonie(string Place, double Price)
-        //{
-        //    var test = ceremonie.Single(r => r.place == Place);
-        //    return ceremonie.Remove(test);
-        //}
+            return availableCeremonies;
+        }
+
+        public bool AddCeremony(string place, double price)
+        {
+            if (string.IsNullOrEmpty(place) || price <= 0)
+            {
+                return false;
+            }
+
+            var ceremonyForAdd = new Ceremony(place, price);
+
+            if (AvailableServices.Where(e => e is Ceremony &&
+               (e as Ceremony).Place == ceremonyForAdd.Place && (e as Ceremony).Price == ceremonyForAdd.Price).FirstOrDefault() == null
+               || ServicesInOrder.Where(e => e is Ceremony &&
+               (e as Ceremony).Place == ceremonyForAdd.Place && (e as Ceremony).Price == ceremonyForAdd.Price).FirstOrDefault() != null)
+            {
+                return false;
+            }
+
+            ServicesInOrder.Add(ceremonyForAdd);
+
+            return true;
+        }
+
+        public bool RemoveCeremony(string place, double price)
+        {
+            var ceremonyForRemove = (Ceremony)ServicesInOrder.Where(e => e is Ceremony &&
+               (e as Ceremony).Place == place && (e as Ceremony).Price == price).FirstOrDefault();
+
+            if (AvailableServices.Where(e => e is Ceremony &&
+               (e as Ceremony).Place == ceremonyForRemove.Place && (e as Ceremony).Price == ceremonyForRemove.Price).FirstOrDefault() == null
+               || ceremonyForRemove == null)
+            {
+                return false;
+            }
+
+            return ServicesInOrder.Remove(ceremonyForRemove);
+        }
+
+        
 
         //public double Summary()
         //{

@@ -49,81 +49,45 @@ namespace WeddingTests
             Assert.IsTrue(actual);
         }
 
-        //[TestMethod]
-        //public void CheckGetCloth()
-        //{
-        //    List<Cloth> test = new List<Cloth>();
-        //    Cloth temp = new Cloth("some", 1);
-        //    test.Add(temp);
-        //    var actual = test;
+        [TestMethod]
+        public void GetCeremonies_SomeCeremony1WithPrice100_And_SomeCeremony2WithPrice200_Return_ListWith2Members()
+        {
+            Orders SomeOrder = new Orders();
+            SomeOrder.AddCeremony("Some ceremony1", 100);
+            SomeOrder.AddCeremony("Some ceremony2", 200);
 
-        //    order Some = new order();
-        //    Some.AddCloth("some", 1);
-        //    var expected = Some.cloth;
+            var actual = SomeOrder.GetAvailableCeremonies();
+            var expected = new List<Ceremony> {
+            new Ceremony("Some ceremony3", 300),
+            new Ceremony("Some ceremony4", 400)
+            };
 
-        //    var expectedjson = JsonConvert.SerializeObject(expected);
-        //    var actualjson = JsonConvert.SerializeObject(actual);
-        //    Assert.AreEqual(expectedjson, actualjson);
-        //}
+            var expectedjson = JsonConvert.SerializeObject(expected);
+            var actualjson = JsonConvert.SerializeObject(actual);
 
-        //[TestMethod]
-        //public void CheckAddCloth()
-        //{
-        //    order Some = new order();
-        //    bool actual = Some.AddCloth("test", 20);
-        //    bool expected = true;
+            Assert.AreEqual(expectedjson, actualjson);
+        }
 
-        //    Assert.AreEqual(expected, actual);
-        //}
+        [TestMethod]
+        public void AddCeremony_SomeCeremony1WithPrice100_ReturnTrue()
+        {
+            Orders SomeOrder = new Orders();
 
-        //[TestMethod]
-        //public void CheckRemoveCloth()
-        //{
-        //    order Some = new order();
-        //    Some.AddCloth("test", 20);
-        //    bool actual = Some.RemoveCloth("test", 20);
-        //    bool expected = true;
+            bool actual = SomeOrder.AddCeremony("Some ceremony1", 100);
 
-        //    Assert.AreEqual(expected, actual);
-        //}
+            Assert.IsTrue(actual);
+        }
 
-        //[TestMethod]
-        //public void CheckGetCeremonie()
-        //{
-        //    List<ceremonies> test = new List<ceremonies>();
-        //    ceremonies temp = new ceremonies("some", 1);
-        //    test.Add(temp);
-        //    var actual = test;
+        [TestMethod]
+        public void RemoveCeremony_SomeCeremony1WithPrice100_ReturnTrue()
+        {
+            Orders SomeOrder = new Orders();
 
-        //    order Some = new order();
-        //    Some.AddCeremonie("some", 1);
-        //    var expected = Some.ceremonie;
+            SomeOrder.AddCeremony("Some ceremony1", 100);
+            bool actual = SomeOrder.RemoveCeremony("Some ceremony1", 100);
 
-        //    var expectedjson = JsonConvert.SerializeObject(expected);
-        //    var actualjson = JsonConvert.SerializeObject(actual);
-        //    Assert.AreEqual(expectedjson, actualjson);
-        //}
-
-        //[TestMethod]
-        //public void CheckAddCeremonie()
-        //{
-        //    order Some = new order();
-        //    bool actual = Some.AddCeremonie("test", 20);
-        //    bool expected = true;
-
-        //    Assert.AreEqual(expected, actual);
-        //}
-
-        //[TestMethod]
-        //public void CheckRemoveCeremonie()
-        //{
-        //    order Some = new order();
-        //    Some.AddCeremonie("test", 20);
-        //    bool actual = Some.RemoveCeremonie("test", 20);
-        //    bool expected = true;
-
-        //    Assert.AreEqual(expected, actual);
-        //}
+            Assert.IsTrue(actual);
+        }
 
         //[TestMethod]
         //public void CheckSummaryOrder()
